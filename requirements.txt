@@ -6,3 +6,4 @@ scikit-learn
 plotly
 seaborn
 requests
+streamlit==<version_number>
