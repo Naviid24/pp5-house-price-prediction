@@ -1,8 +1,2 @@
-.git/
-*.csv
 *.ipynb
-*.zip
-__pycache__/
-*.pkl
-*.h5
-.env
+
