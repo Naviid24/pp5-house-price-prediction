@@ -29,14 +29,14 @@ for feature in features:
 st.sidebar.subheader('Kitchen Quality')
 st.sidebar.markdown("**0 is the worst, the highest number is the best!**")
 user_inputs['KitchenQual'] = st.sidebar.selectbox(
-    'Kitchen Quality (0 = Not Have , 1 = Fa , 2 = TA , 3 = Gd , 4 = Ex)', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    'Kitchen Quality (0 = Not Have , 1 = Fa , 2 = TA , 3 = Gd , 4 = Ex)', [0, 1, 2, 3, 4]
 )
 
 # Explanation for GarageFinish
 st.sidebar.subheader('Garage Finish')
 st.sidebar.markdown("**0 is the worst, the highest number is the best!**")
 user_inputs['GarageFinish'] = st.sidebar.selectbox(
-    'Garage Finish (0 = Not have , 1 = Unf , 2 = RFn , 3 = Fin)', [0, 1, 2, 3, 4, 5]
+    'Garage Finish (0 = Not have , 1 = Unf , 2 = RFn , 3 = Fin)', [0, 1, 2, 3]
 )
 
 # Convert user inputs into a DataFrame for prediction
