@@ -108,11 +108,6 @@ This project is based on several key hypotheses regarding the factors that influ
 3. **Renovated or newer homes are valued higher**  
    *Hypothesis:* `YearBuilt` and `YearRemodAdd` are strongly correlated with `SalePrice`.
 
-4. **Certain location-related attributes (e.g., `LotFrontage`, `LotArea`) impact price**  
-   *Hypothesis:* Properties with more frontage or larger lots fetch higher sale prices.
-
-5. **Basement and garage features add significant value**  
-   *Hypothesis:* Finished basements (`BsmtFinType1`, `BsmtFinSF1`) and garage quality (`GarageFinish`, `GarageYrBlt`) positively affect the price.
 
 ### ✅ Validation Methods
 
@@ -264,6 +259,12 @@ While the current dashboard provides essential functionality, there are several 
 
 The **Streamlit app** serves as an interactive tool for users to easily explore the data, understand the relationships between house features and prices, and make predictions on new houses. It provides an accessible and engaging way to work with machine learning models in a real-world business context.
 
+
+
+## 💼 Credits
+  - I watched a Youtube channel. [Youtube](https://www.youtube.com/watch?v=SM95HJ1CCdM&list=PLP_4EPVEox9-Vc0pXKnnso3SOIpP_6SLQ)
+  - I learned almost everything from what I studied in the course.
+  - I would like to express my gratitude to my mentor, [Can Sücüllü](https://www.linkedin.com/in/cansucullu/), for his unwavering guidance, moral support, encouragement, and invaluable suggestions throughout the project. The project review sessions with my mentor, along with his solutions to my questions and the study materials he provided, were instrumental in the success of this project.
 
 
 
