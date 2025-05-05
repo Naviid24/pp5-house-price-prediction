@@ -55,6 +55,11 @@ This project demonstrates how **machine learning** can support **real estate pro
 
 ---
 
+## 🧾 Testing
+
+All python codes tested with pep8
+
+---
 ## 🧠 Goals
 
 - Perform EDA (Exploratory Data Analysis)
