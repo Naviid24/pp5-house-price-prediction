@@ -45,4 +45,6 @@ st.info("""
 """)
 
 # Footer
-st.caption("Created with ❤️ by **Navid Bahadorani** - 2025")
+st.markdown("---")
+st.caption('Created by [**Navid Bahadorani**](https://www.linkedin.com/in/navid-bahadorani-44a513299/) - 2025')
+

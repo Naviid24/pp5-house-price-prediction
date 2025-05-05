@@ -61,3 +61,6 @@ prediction = model.predict(input_data_encoded)
 st.subheader('Prediction Result')
 st.write(f"The predicted price category is: **{prediction[0]}**")
 
+# Footer
+st.markdown("---")
+st.caption('Created by [**Navid Bahadorani**](https://www.linkedin.com/in/navid-bahadorani-44a513299/) - 2025')
