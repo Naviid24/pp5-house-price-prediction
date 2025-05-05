@@ -12,8 +12,6 @@ df = pd.read_csv('data/processed/cleaned_corr_data.csv')
 # Get the feature columns (drop the target variable 'SalePrice')
 features = df.drop('SalePrice', axis=1).columns.tolist()
 
-
-
 # Sidebar for user input
 st.sidebar.header('Input House Features')
 
@@ -31,7 +29,7 @@ for feature in features:
 
 # Dynamically create sliders for the features
 for feature in features:
-    if feature not in ['KitchenQual', 'GarageFinish']:  # Skip the ones handled below
+    if feature not in ['KitchenQual', 'GarageFinish']:
         min_val = feature_ranges[feature]['min']
         max_val = feature_ranges[feature]['max']
         default_val = feature_ranges[feature]['default']
@@ -43,7 +41,8 @@ for feature in features:
 st.sidebar.subheader('Kitchen Quality')
 st.sidebar.markdown("**0 is the worst, the highest number is the best!**")
 user_inputs['KitchenQual'] = st.sidebar.selectbox(
-    'Kitchen Quality (0 = Not Have , 1 = Fa , 2 = TA , 3 = Gd , 4 = Ex)', [0, 1, 2, 3, 4]
+    'Kitchen Quality (0 = Not Have , 1 = Fa , 2 = TA , 3 = Gd , 4 = Ex)', [
+        0, 1, 2, 3, 4]
 )
 
 # Explanation for GarageFinish
@@ -56,10 +55,15 @@ user_inputs['GarageFinish'] = st.sidebar.selectbox(
 # Convert user inputs into a DataFrame for prediction
 input_data = pd.DataFrame(user_inputs, index=[0])
 
-# Ensure that input_data columns match the exact order and names used during training
+# Ensure that input_data columns match the exact order
+# and names used during training
 input_data = input_data[features]
 
-st.write("For **GrLivArea, GarageArea, TotalBsmtSF** Unit / Range  is in sq ft")
+st.write(
+    """
+    For **GrLivArea, GarageArea, TotalBsmtSF** Unit / Range  is in sq ft
+    """
+    )
 
 # Display user inputs for transparency
 st.write("### User Inputs:")
@@ -68,11 +72,16 @@ st.write(input_data)
 # Only check and show warning after the button is clicked
 if st.button('Predict Sale Price'):
     # Check if all inputs are provided
-    missing_inputs = [feature for feature, value in user_inputs.items() if value == 0]  # Assuming 0 means missing value
-    
+    missing_inputs = [
+        feature for feature, value in user_inputs.items() if value == 0
+        ]  # Assuming 0 means missing value
+
     if missing_inputs:
         missing_features = ", ".join(missing_inputs)
-        st.warning(f"Please fill in the following missing features: {missing_features}.")
+        st.warning(
+            f"Please fill in the following missing features: "
+            f"{missing_features}."
+        )
     else:
         try:
             prediction = model.predict(input_data)
@@ -81,6 +90,11 @@ if st.button('Predict Sale Price'):
             st.error(f"Error during prediction: {str(e)}")
 
 
+# ------------------------------
 # Footer
+# ------------------------------
 st.markdown("---")
-st.caption('Created by [**Navid Bahadorani**](https://www.linkedin.com/in/navid-bahadorani-44a513299/) - 2025')
+st.caption(
+    "Created by [**Navid Bahadorani**](https://www.linkedin.com/in/navid-"
+    "bahadorani-44a513299/) - 2025"
+)
